@@ -1,0 +1,24 @@
+@use "../../scss/responsive.scss" as m;
+
+.layout {
+  background-color: blue;
+  overflow-y: scroll;
+  height: 100%;
+  max-width: 1300px; // ✅ added "px" unit
+
+  margin: 0 auto;
+  padding: 0 20px;
+
+  // Responsive breakpoints
+  @include m.sm {
+    background-color: red;
+  }
+
+  @include m.md {
+    background-color: gray;
+  }
+
+  @include m.lg {
+    background-color: orange;
+  }
+}

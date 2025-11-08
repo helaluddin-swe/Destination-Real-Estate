@@ -1,0 +1,84 @@
+@use "../../scss/responsive.scss" as r;
+
+.homePage {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+   margin:20px 0;
+
+
+  .textContainer {
+    flex: 3;
+
+ 
+   
+
+    .wrapper {
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
+      
+      @include r.sm {
+       gap: 20px;
+        }
+
+      .title {
+        font-size: 64px;
+        
+
+        @include r.sm {
+          font-size: 40px;
+        }
+      }
+
+      .mainbox {
+        display: flex;
+        gap: 8px;
+        
+        justify-content: space-between;
+
+        @include r.sm {
+          flex-direction: column;
+        }
+        .box{
+            align-items: center;
+        padding: 6px;
+        border: 1px solid gray;
+        h2{
+            text-align: center;
+            color: blue;
+            font-size:large;
+        }
+        h3{
+            text-align: center;
+        }
+        }
+      }
+    }
+  }
+
+  /* ✅ Image container */
+  .imgContainer {
+    flex: 2;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #fcf3f6;
+
+    /* Hide on small screens */
+    @include r.sm {
+      display: none;
+    }
+
+    img {
+      width: 115%;
+      height: 100vh;
+      right: 0;
+      position: absolute;
+    }
+  }
+}

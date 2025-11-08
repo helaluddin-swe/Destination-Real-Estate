@@ -1,0 +1,67 @@
+@use "../../scss/responsive.scss" as r;
+.filter{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+    .top{
+  
+        .search{
+            label{
+                input{
+                    height: 40px;
+                    width: 100%;
+                    @include r.sm{
+                        width: 100%;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+    .bottom{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;   
+        gap: 4px;
+         @include r.sm{
+        display: flex;flex-direction: column;
+    }
+        .type{
+     
+            input,select{
+                 height: 40px;
+                 width: 100%;
+
+      
+                
+            }
+              button{
+               margin-top: 20px;
+                      background-color: yellow;
+                    
+                      width: 100%;
+                      @include r.sm{
+                        margin-top: 0;
+                      }
+                       .search{
+                  height: 30px;
+                  align-items: center;
+                
+                 
+                 } 
+              }
+
+
+                
+                }
+            
+        
+
+
+        }
+
+    }

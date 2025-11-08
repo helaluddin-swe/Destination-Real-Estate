@@ -1,0 +1,42 @@
+.listPage {
+  display: flex;
+  height: 100vh; // ✅ ensures full-page layout
+  width: 100%;
+  background-color: #f8f8f8;
+  overflow: hidden;
+
+  .listSection {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 20px;
+
+    .listContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .cardListDiv {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .noData {
+      text-align: center;
+      color: #888;
+    }
+  }
+
+  .mapSection {
+    flex: 2;
+    height: 100%;
+  }
+
+  .map {
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+.pin {
+  .popUp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 180px;
+  }
+
+  .imgDiv {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 8px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .textDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    p {
+      font-size: 13px;
+      color: #444;
+      margin: 0;
+    }
+  }
+}

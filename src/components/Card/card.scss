@@ -1,0 +1,66 @@
+.cardDiv {
+  border: 1px solid gray;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden; // prevents content overflow
+
+  .imgContainer {
+    flex: 2;
+    border-right: 1px solid gray;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .textContainer {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // pushes text to fill height
+    padding: 15px 20px; // adds inner spacing
+    background: #fff;
+
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      color: #333;
+    }
+
+    .address,
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: gray;
+    }
+
+    .bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      color: gray;
+      gap: 12px;
+      font-weight: bold;
+      padding: 0;
+      margin: 0;
+      .number{
+        display: flex;
+        gap: 12px;
+      }
+      .bookmark{
+         display: flex;
+        gap: 12px;
+      }
+    }
+  }
+}
