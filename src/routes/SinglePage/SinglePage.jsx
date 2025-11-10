@@ -1,9 +1,13 @@
 import Slider from "../../components/Slider/Slider";
 import { Bath, Bed, BusFront, Hotel, PinIcon, School, Square } from "lucide-react";
 import {  singlePostData, userData} from "../../utils/listData";
+import { Link, useNavigate } from "react-router-dom";
+
 import "./SinglePage.scss";
 import Map from "../../components/Map/Map";
 const SinglePage = () => {
+  const navigate=useNavigate()
+ 
   return (
     <div className="singlePage">
       <div className="details">
@@ -22,8 +26,8 @@ const SinglePage = () => {
                 <div className="price">${singlePostData.price}</div>
               </div>
 
-              <div className="user">
-                <span className="title">{userData.full_name}</span>
+              <div className="user" onClick={()=>navigate("/profile")} >
+                <span className="title" >{userData.full_name}</span>
                 <img src={userData.image} alt={userData.title} />
               </div>
             </div>

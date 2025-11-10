@@ -1,0 +1,242 @@
+@use "../../scss/responsive.scss" as r;
+
+.listLayout {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: #f9fafb; // soft neutral background
+  padding: 1rem;
+  gap: 1.5rem;
+  scroll-behavior: smooth;
+
+  .thumbnail {
+    width: 100%;
+    height: 300px;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #9ca3af, #6b7280); // soft gray gradient
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .feature {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+
+    @include r.lg {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .featureLeft {
+      background: #e0f7fa; // soft aqua tone
+      display: grid;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #b2ebf2;
+      }
+
+      @include r.sm {
+        grid-template-columns: 1fr;
+      }
+
+      @include r.md {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include r.lg {
+        width: 60%;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h2 {
+        grid-column: 1 / -1;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 0.5rem;
+      }
+
+      div {
+        height: 120px;
+        border: 1px solid #cbd5e1;
+        border-radius: 0.5rem;
+        background: #f8fafc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1e293b;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #e2e8f0;
+          transform: translateY(-3px);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    .featureRight {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.8rem;
+  }
+
+  // 🔥 Hot Topics Section
+  .hotTopics {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+    .hotDiv {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      button {
+        background: #edf2f7;
+        border: none;
+        border-radius: 8px;
+        padding: 0.5rem 0.9rem;
+        font-size: 0.9rem;
+        color: #2d3748;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #3182ce;
+          color: #fff;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  // 📰 Latest Listing
+  .Latest {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        object-fit: cover;
+        background: #e2e8f0;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: #4a5568;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // 📨 Newsletter
+  .newsLater {
+    background: linear-gradient(145deg, #e0f7fa, #f1faff);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      input {
+        flex: 1;
+        padding: 0.5rem 0.8rem;
+        border: 1px solid #cbd5e0;
+        border-radius: 8px;
+        outline: none;
+        font-size: 0.9rem;
+
+        &:focus {
+          border-color: #3182ce;
+          box-shadow: 0 0 4px rgba(49, 130, 206, 0.4);
+        }
+      }
+
+      svg {
+        background: #3182ce;
+        color: #fff;
+        border-radius: 8px;
+        padding: 0.4rem;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #2b6cb0;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  // 🌐 Social Links
+  .Links {
+    background: #edf2f7;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: #2d3748;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #e2e8f0;
+    }
+  }
+}
+
+  }
+}

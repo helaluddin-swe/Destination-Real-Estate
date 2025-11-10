@@ -4,7 +4,7 @@ import "./header.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { userData } from "../../utils/listData";
 
-const Header = () => {
+const Header = ({id}) => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const user = true;
@@ -15,7 +15,7 @@ const Header = () => {
       </div>
 
       <div className="middle">
-        <li>Blog</li>
+        <Link to={"/blog-list"}> <li>Blog</li>   </Link>
         <li onClick={()=>navigate("/")}>Home</li>
         <li onClick={() => navigate("/list")}>List</li>
       </div>
@@ -43,7 +43,7 @@ const Header = () => {
         </div>
 
         <div className={`${open ? "menu active" : "menu"}`}>
-          <li>Blog</li>
+          <li  > Blog</li>
           <li>Home</li>
           <li onClick={() => navigate("/list")}>List</li>
           <button>Sign</button>
